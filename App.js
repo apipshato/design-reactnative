@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {  Text} from 'react-native';
+import {  ScrollView} from 'react-native';
 import styled from 'styled-components';
 import Card from './components/Card';
 
 export default function App() {
   return (
     <Container >
+    <ScrollView style={{height: "100%"}}>
     <TitleBar>
     <Avatar source={require('./assets/avatar.jpg')}/>
       <Title>Welcome Back, </Title>
@@ -16,7 +17,21 @@ export default function App() {
       <Subtitle>
         Continue Learning
       </Subtitle>
-      <Card/>
+      <ScrollView horizontal={true} style={{paddingBottom: 30}}>
+      <Card title="Styled Components"
+       image={require('./assets/background2.jpg')}
+       caption="React Native"
+       logo={require('./assets/logo-react.png')}
+       subtitle="5 0f 12 sections"
+       />
+        <Card title="Styled Components 2"
+       image={require('./assets/background1.jpg')}
+       caption="React Native"
+       logo={require('./assets/logo-react.png')}
+       subtitle="5 0f 12 sections"
+       />
+       </ScrollView>
+       </ScrollView>
     </Container>
   );
 }
