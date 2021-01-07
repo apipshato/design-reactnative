@@ -3,7 +3,9 @@ import React from "react";
 import { ScrollView, SafeAreaView } from "react-native";
 import styled from "styled-components";
 import Card from "./components/Card";
-import * as Icon from '@expo/vector-icons'
+import {NotificationIcon} from './components/Icons'
+import Logo from "./components/Logo";
+
 
 
 export default function App() {
@@ -15,13 +17,12 @@ export default function App() {
             <Avatar source={require("./assets/avatar.jpg")} />
             <Title>Welcome Back, </Title>
             <Name>Apep</Name>
-            <Icon.Ionicons name="notifications" 
-            size={32} 
-            color="#4475f2"
-            style={{position:"absolute", right: 20}}
+            <NotificationIcon
+            style={{position:"absolute", right: 20, top: 5}}
             />
             <StatusBar style="auto" />
           </TitleBar>
+          <Logo image={require('./assets/logo-framerx.png')} Text="Framer x"/>
           <Subtitle>Continue Learning</Subtitle>
           <ScrollView
             horizontal={true}
