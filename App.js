@@ -22,7 +22,7 @@ export default function App() {
             />
             <StatusBar style="auto" />
           </TitleBar>
-          <Logo image={require('./assets/logo-framerx.png')} Text="Framer x"/>
+          <Logo image={require('./assets/logo-framerx.png')} text="Framer X"/>
           <Subtitle>Continue Learning</Subtitle>
           <ScrollView
             horizontal={true}
