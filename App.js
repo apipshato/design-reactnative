@@ -182,7 +182,7 @@ const courses = [
     logo: require("./assets/logo-studio.png"),
     author: "Afif Shato",
     avatar: require("./assets/avatar.jpg"),
-    caption:"design and interactive prototype"
+    caption:"Design and interactive prototype"
   },
   {
     title: "React For Designer",
@@ -203,7 +203,7 @@ const courses = [
     caption:"Create powerfull design and code components for your app"
   },
   {
-    title: "Design syster in Figma",
+    title: "Design system in Figma",
     subtitle: "10 sections",
     image: require('./assets/background6.jpg'),
     logo: require("./assets/logo-figma.png"),
