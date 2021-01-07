@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { ScrollView, SafeAreaView } from "react-native";
+import { ScrollView, SafeAreaView, ShadowPropTypesIOS } from "react-native";
 import styled from "styled-components";
 import Card from "./components/Card";
 import Course from "./components/Course";
@@ -54,7 +54,19 @@ export default function App() {
            
           </ScrollView>
           <Subtitle>Popular Course</Subtitle>
-          <Course></Course>
+          {courses.map((course, index) =>(
+            <Course 
+            key={index}
+            image={course.image}
+            title={course.title}
+            subtitle={course.subtitle}
+            logo={course.logo}
+            author={course.author}
+            avatar={course.avatar}
+            caption={course.caption}
+            />
+          ))}
+          
         </ScrollView>
       </SafeAreaView>
     </Container>
@@ -157,5 +169,46 @@ const cards=[
     subtitle:"React Native",
     caption:"4 of 12 sections",
     logo:require("./assets/logo-react.png")
+  }
+]
+
+// data buat course
+
+const courses = [
+  {
+    title: "Prototype in Invision Studio",
+    subtitle: "10 sections",
+    image: require("./assets/background13.jpg"),
+    logo: require("./assets/logo-studio.png"),
+    author: "Afif Shato",
+    avatar: require("./assets/avatar.jpg"),
+    caption:"design and interactive prototype"
+  },
+  {
+    title: "React For Designer",
+    subtitle: "12 sections",
+    image: require("./assets/background11.jpg"),
+    logo: require("./assets/logo-react.png"),
+    author: "Afif Shato",
+    avatar: require("./assets/avatar.jpg"),
+    caption:"Learn to design and code a React site"
+  },
+  {
+    title: "Design and Code with Framer X",
+    subtitle: "10 sections",
+    image: require("./assets/background14.jpg"),
+    logo: require("./assets/logo-framerx.png"),
+    author: "Afif Shato",
+    avatar: require("./assets/avatar.jpg"),
+    caption:"Create powerfull design and code components for your app"
+  },
+  {
+    title: "Design syster in Figma",
+    subtitle: "10 sections",
+    image: require('./assets/background6.jpg'),
+    logo: require("./assets/logo-figma.png"),
+    author: "Afif Shato",
+    avatar: require("./assets/avatar.jpg"),
+    caption:"Complete guide designing a site using a collaborative design tool"
   }
 ]
