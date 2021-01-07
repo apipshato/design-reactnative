@@ -3,6 +3,7 @@ import React from "react";
 import { ScrollView, SafeAreaView } from "react-native";
 import styled from "styled-components";
 import Card from "./components/Card";
+import Course from "./components/Course";
 import {NotificationIcon} from './components/Icons'
 import Logo from "./components/Logo";
 
@@ -52,6 +53,8 @@ export default function App() {
           ))}
            
           </ScrollView>
+          <Subtitle>Popular Course</Subtitle>
+          <Course></Course>
         </ScrollView>
       </SafeAreaView>
     </Container>
