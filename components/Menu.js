@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 import { Animated, LogBox, TouchableOpacity, Dimensions } from 'react-native'
 import * as Icon from '@expo/vector-icons'
+import MenuItem from './MenuItem'
 
 
 const screenHeight= Dimensions.get("window").height 
@@ -38,7 +39,9 @@ toggleMenu =()=>{
                     <Icon.Ionicons name="ios-close" size={44} color="#546bfb" />
                 </CloseView>
                 </TouchableOpacity>
-                <Content/>
+                <Content>
+                    <MenuItem/>
+                </Content>
             </AnimatedContainer>
         )
     }
@@ -93,3 +96,12 @@ const Content =styled.View`
 height: ${screenHeight};
 background: #f0f3f5;
 `;
+
+const items=[
+    {
+        icon: "ios-settings",
+        title: "Account",
+        text: "settings",
+        
+    }
+]

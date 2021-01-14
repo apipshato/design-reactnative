@@ -14,3 +14,11 @@ const MenuItem= props => (
         </Content>
     </Container>
 )
+
+export default MenuItem;
+
+ const Container= styled.View``;
+ const IconView= styled.View``;
+ const Content= styled.View``;
+ const Title= styled.Text``;
+ const Text= styled.Text``;
