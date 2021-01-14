@@ -11,10 +11,11 @@ state={
     top: new Animated.Value(screenHeight)
 };
 componentDidMount(){
-    //LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
+    LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
 
     Animated.spring(this.state.top, {
-        toValue: 0
+        toValue: 0,
+        
     }).start()
 }
 
@@ -49,8 +50,16 @@ position: absolute;
 width:100%;
 height:100%;
 `;
-const Title= styled.Text``;
-const Subtitle= styled.Text``;
+const Title= styled.Text`
+color: white;
+font-size: 24px;
+font-weight: 600;
+`;
+const Subtitle= styled.Text`
+font-size: 13px;
+color: rgba(255,255,255, 0.5);
+margin-top: 8px;
+`;
 const CloseView=styled.View`
 width:44px;
 height:44px;
