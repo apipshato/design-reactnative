@@ -26,21 +26,24 @@ class Menu extends React.Component {
   componentDidMount() {
     this.toggleMenu();
   }
-  componentDidUpdate(){
-  this.toggleMenu();
+
+  componentDidUpdate() {
+    this.toggleMenu();
   }
 
   toggleMenu = () => {
     if (this.props.action == "openMenu") {
-   LogBox.ignoreLogs(["Animated: `useNativeDriver`"]);
 
       Animated.spring(this.state.top, {
-        toValue: 0,
+        toValue: 54,
+      
+        
       }).start();
     }
-    if (this.state.action == "closeMenu") {
+
+    if (this.props.action == "closeMenu") {
       Animated.spring(this.state.top, {
-        toValue: screenHeight,
+        toValue: screenHeight
       }).start();
     }
   };
@@ -59,7 +62,7 @@ class Menu extends React.Component {
             top: 120,
             left: "50%",
             marginLeft: -22,
-            zIndex: 1,
+            zIndex: 1
           }}
         >
           <CloseView>
@@ -113,6 +116,8 @@ const Container = styled.View`
   width: 100%;
   height: 100%;
   z-index: 100;
+  border-radius: 10px;
+  overflow:hidden;
 `;
 
 const AnimatedContainer = Animated.createAnimatedComponent(Container);
