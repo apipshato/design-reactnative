@@ -1,23 +1,38 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { ScrollView, SafeAreaView, ShadowPropTypesIOS } from "react-native";
+import { ScrollView, SafeAreaView, TouchableOpacity } from "react-native";
 import styled from "styled-components";
 import Card from "../components/Card";
 import Course from "../components/Course";
 import {NotificationIcon} from '../components/Icons'
 import Logo from "../components/Logo";
 import Menu from "../components/Menu";
+import{ connect} from 'react-redux'
+
+function mapStateToProps(state){
+return {action: state.action}
+}
+
+function mapDispatchToProps(dispatch){
+    return {
+        openMenu: ()=> dispatch({
+            type: "OPEN_MENU"
+        }) 
+    }
+}
 
 
-
-export default function HomeScreen() {
+class  HomeScreen extends React.Component{
+    render(){
   return (
     <Container>
     <Menu/>
       <SafeAreaView>
         <ScrollView style={{ height: "100%" }}  contentContainerStyle={{ flexGrow: 1 }}>
           <TitleBar>
+          <TouchableOpacity onPress={this.props.openMenu}>
             <Avatar source={require("../assets/avatar.jpg")} />
+            </TouchableOpacity>
             <Title>Welcome Back, </Title>
             <Name>Apep</Name>
             <NotificationIcon
@@ -75,6 +90,8 @@ export default function HomeScreen() {
     </Container>
   );
 }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(HomeScreen);
 
 const Subtitle = styled.Text`
   color: #b8bece;
@@ -91,9 +108,7 @@ const Avatar = styled.Image`
   background: black;
   border-radius: 22px;
   margin-left: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
+
 `;
 
 const Container = styled.View`

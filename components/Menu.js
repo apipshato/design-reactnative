@@ -27,12 +27,12 @@ class Menu extends React.Component {
     this.toggleMenu();
   }
   componentDidUpdate(){
-    this.toggleMenu();
+  this.toggleMenu();
   }
 
   toggleMenu = () => {
     if (this.props.action == "openMenu") {
-    LogBox.ignoreLogs(["Animated: `useNativeDriver`"]);
+   LogBox.ignoreLogs(["Animated: `useNativeDriver`"]);
 
       Animated.spring(this.state.top, {
         toValue: 0,
@@ -125,7 +125,7 @@ const Cover = styled.View`
 `;
 
 const Content = styled.View`
-  height: ${screenHeight};
+  height: ${screenHeight}px;
   background: #f0f3f5;
   padding: 50px;
 `;
